@@ -1,0 +1,15 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">My Photos App</a>
+        </div>
+        <ul class="nav navbar-nav" *ngFor="let route of navRoutes">
+            <li>
+                <a routerLink="/{{route.path}}" [ngClass]="{'active': isCurrent(route.path)}">{{route.data.title}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
